@@ -2,20 +2,7 @@
 
 </app-header>
 
-
-<!--
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Grid and Row</ion-title>
-  </ion-toolbar>
-</ion-header>-->
-
-
 <ion-content>
-
   <ion-grid fixed>
     <ion-row>
     <ion-col size="12" size-lg="3" size-md="4" size-sm="6" size-xs="12" *ngFor="let i of [1,1,1,1,1,1,1,1,1,1,1,1];let ind=index;">
@@ -25,10 +12,11 @@
           <ion-card-title>Mi Titulo</ion-card-title>
           <ion-card-subtitle>Mi subtitulo</ion-card-subtitle>
         </ion-card-header>
+        <ion-card-content>
+          Lorem PIPO
+        </ion-card-content>
       </ion-card>
     </ion-col>
     </ion-row>
-
   </ion-grid>
-
 </ion-content>
