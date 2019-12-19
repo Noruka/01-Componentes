@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Componente} from '../../interfaces/interfaces';
+import {Observable} from 'rxjs';
+import {MenuController} from '@ionic/angular';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,69 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  componentes: Componente[] = [
-    {
-      icon: 'american-football',
-      name: 'Action-sheet',
-      redirectTo: '/action-sheet'
-    },
-    {
-      icon: 'appstore',
-      name: 'Alert',
-      redirectTo: '/alert'
-    },
-    {
-      icon: 'beaker',
-      name: 'Avatar',
-      redirectTo: '/avatar'
-    },
-    {
-      icon: 'car',
-      name: 'Fab',
-      redirectTo: '/fab'
-    },
-    {
-      icon: 'grid',
-      name: 'Grid',
-      redirectTo: '/grid'
-    },
-    {
-      icon: 'infinite',
-      name: 'Infinite Scroll',
-      redirectTo: '/infinite-scroll'
-    },
-    {
-      icon: 'hammer',
-      name: 'Input y Forms',
-      redirectTo: '/input'
-    },
-    {
-      icon: 'list',
-      name: 'Listas',
-      redirectTo: '/list'
-    },
-    {
-      icon: 'Reorder',
-      name: 'List Reorder',
-      redirectTo: '/list-reorder'
-    },
-    {
-      icon: 'refresh-circle',
-      name: 'Loading',
-      redirectTo: '/loading'
-    }
-  ];
+  componentes: Observable<Componente[]>;
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController, private dataService: DataService) { }
 
   ngOnInit() {
-
+    this.componentes = this.dataService.getOpts();
   }
 
-}
-
-interface Componente {
-  icon: string;
-  name: string;
-  redirectTo: string;
 }
