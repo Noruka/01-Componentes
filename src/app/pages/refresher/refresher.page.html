@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>refresher</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Refresher"></app-header>
 
 <ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh( $event )">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <h1 *ngIf="items.length === 0" class="animated fadeIn fast">Arrastre hacia abajo para recargar</h1>
+
+  <ion-list *ngIf="items.length > 0" class="animated fadeIn fast">
+    <ion-item *ngFor="let i of items; let ind = index;">
+      Item {{ ind+1 }}
+    </ion-item>
+  </ion-list>
+
 
 </ion-content>
