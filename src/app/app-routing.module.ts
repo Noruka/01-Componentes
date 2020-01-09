@@ -59,6 +59,10 @@ const routes: Routes = [
     path: 'popover',
     loadChildren: () => import('./pages/popover/popover.module').then( m => m.PopoverPageModule)
   },
+  {
+    path: 'refresher',
+    loadChildren: () => import('./pages/refresher/refresher.module').then( m => m.RefresherPageModule)
+  },
 ];
 
 @NgModule({
